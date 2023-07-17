@@ -3,18 +3,7 @@ import React from "react";
 // to create backend express app
 import express from "express";
 
-/**
- * Render a React element to its initial HTML. This should only be used on the server.
- * React will return an HTML string. You can use this method to generate HTML on the server
- * and send the markup down on the initial request for faster page loads and to allow search
- * engines to crawl your pages for SEO purposes.
- *
- * If you call `ReactDOMClient.hydrateRoot()` on a node that already has this server-rendered markup,
- * React will preserve it and only attach event handlers, allowing you
- * to have a very performant first-load experience.
- */
-// export function renderToString(element: ReactElement): string;
-import { renderToString } from "react-dom/server";
+import { renderToPipeableStream } from "react-dom/server";
 
 // react component that will be sent as html from the expres app as a response.
 import { readdirSync } from "fs";
@@ -40,19 +29,9 @@ pages.forEach((page) => {
     const props = module.getProps
       ? await module.getProps({ query: req.query })
       : {};
-    const html = renderToString(<Component {...props} />);
-
-    res.send(`
-     <!DOCTYPE html>
-     <html>
-          <head>
-          <title>React SSR</title>
-          </head>
-          <body>
-          <div id="root">${html}</div>
-          </body>
-     </html>
-     `);
+    const html = <Component {...props} />;
+    const { pipe } = renderToPipeableStream(html);
+    pipe(res);
   });
 });
 
