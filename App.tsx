@@ -1,14 +1,14 @@
 import React from "react";
 
-import { Product } from "./Product";
-import { Products } from "./Products";
 import { Route } from "./Route";
 import { Router } from "./Router";
+import Product from "./pages/product";
+import Products from "./pages/products";
 
-export const App = () => {
+export const App = ({ initialPath }: { initialPath: string }) => {
   return (
-    <Router>
-      <Route path="/">
+    <Router initialPath={initialPath}>
+      <Route path="/products">
         <Products />
       </Route>
       <Route path="/product">
