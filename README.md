@@ -1,4 +1,4 @@
-#### Final working example implemented server side rendering, file based routing and server side data fetching with `readToString`.
+#### Final working example implemented server side rendering, file based routing and server side data fetching with `renderToString`.
 
 #### How to run the app
 - `npm i`
