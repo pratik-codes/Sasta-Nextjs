@@ -6,6 +6,6 @@ Slides - [link](https://www.canva.com/design/DAFrca3bVDs/FG_11wuVppsFj4MaMO9uEA/
 
 ---
 
-<b>Sasta Nextjs</b> - Built for a talk at React Pune. Creating framework things like server-side rendering and file-based routing from scratch in vanilla reactjs ⚛️
+<b>Sasta Nextjs</b> - Built for a talk at React Pune. "Creating framework things like server-side rendering and file-based routing from scratch in vanilla reactjs ⚛️"
 <br/>
 Slides - [link](https://www.canva.com/design/DAFo4lZikcA/LQtUkjj9q_mwusy7aDS4FQ/edit?utm_content=DAFo4lZikcA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
